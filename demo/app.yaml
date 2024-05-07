@@ -1,0 +1,17 @@
+runtime: python38
+instance_class: F1
+env_variables:
+  MYSQL_USER: 'root'
+  MYSQL_PASSWORD: '34566'
+  MYSQL_DB: 'mymusic'
+  MYSQL_HOST: '34.123.195.181'
+
+handlers:
+- url: /img
+  static_dir: static/img
+
+- url: /script
+  static_dir: static/script
+
+- url: /styles
+  static_dir: static/styles

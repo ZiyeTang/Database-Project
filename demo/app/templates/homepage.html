@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet", href="{{url_for('static', filename='styles/homepage_style.css')}}">
+    <title>My Music</title>
+</head>
+<body>
+    <div id="title">
+        Welcome to MyMusics!
+    </div>
+    <div class="bt-55"><a href="/querySong/{{userid}}/1" class="button-55">Song List</a></div>
+    <div class="bt-55"><a href="/user/{{userid}}" class="button-55">Favorite Songs</a></div>
+    <div class="bt-55"><a href="/" class="button-55">Log in with another account</a></div></br>
+    
+</body>
+</html>

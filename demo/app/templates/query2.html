@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Music</title>
+        <link rel="stylesheet", href="{{url_for('static', filename='styles/custom.css')}}">
+    </head>
+    <body>
+        
+        <div id="title">
+            Albums
+        </div>
+        <div id="albums">
+            <a href="/home/{{userid}}" class="button-55">Home</a>
+            <a href="/querySong/{{userid}}/1" class="button-55">Song List</a>
+            <a href="/query1/{{userid}}/1" class="button-55">Popular Artists</a>
+            <a href="/query2/{{userid}}/1" class="button-55">Albums</a>
+        </div>
+        <!-- <h3>For this query, I'm trying to return the albums that contains more than 5 songs. And it should
+            also return the popularity for each album and songs contained in each album with ther song
+                popularity.The result is ordered by the album id.
+        </h3> -->
+
+        <div id="song_list">
+            <table cellpadding="10">
+                <thead>
+                    <tr> 
+                        
+                        <th>Album Name</th>
+                        <th>Album Popularity</th>
+                        <th>Song Name</th>
+                        <th>Song Popularity</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for item in list2 %}
+                        <tr>
+                            
+                            <td align="center">{{item.album_name}}</td>
+                            <td align="center">{{item.album_popularity}}</td>
+                            <td align="center">{{item.song_name}}</td>
+                            <td align="center">{{item.song_popularity}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="change_page">
+                {% if page!='1'%}
+                <a href= "/query2/{{userid}}/{{prevpage}}" class="button-50">prev</a>
+                {% endif %}
+
+                <span style="font-family:cursive; font-size:35px">Page: {{page}}</span>
+
+                {% if length>=20 %}
+                    <a href= "/query2/{{userid}}/{{nextpage}}" class="button-50">next</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='script/modal.js')}}"></script>
+</html>

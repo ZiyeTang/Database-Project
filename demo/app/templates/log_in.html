@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>MyMusics-Login</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel="stylesheet" href="{{url_for('static', filename='styles/log_in.css')}}">
+    </head>
+    <body>
+    <!-- partial:index.partial.html -->
+        <div id="login-form-wrap">
+            <h2>Login</h2>
+            <form id="login-form" method="POST" action="/">
+                <p>
+                    <input type="text" id="username" name="username" placeholder="Username" required><i class="validation"><span></span><span></span></i>
+                </p>
+                <p>
+                    <input type="password" id="password" name="password" placeholder="Password" required><i class="validation"><span></span><span></span></i>
+                </p>
+                <p>
+                    <input type="submit" id="login" value="Login">
+                </p>
+            </form>
+            {% if result %}
+                <div id="false_msg">Username or password is incorrect</div>
+                {% set result=False %}
+            {% endif %}
+            <div id="create-account-wrap">
+                <p>Not a member? <a href="/createaccount">Create Account</a><p>
+            </div>
+        </div>
+    </body>
+</html>

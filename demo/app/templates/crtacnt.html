@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>MyMusics-Create Account</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel="stylesheet" href="{{url_for('static', filename='styles/crtacnt.css')}}">
+    </head>
+    <body>
+    <!-- partial:index.partial.html -->
+        <div id="login-form-wrap">
+            <h2>Create Account</h2>
+            <form id="login-form" action="/createaccount" method="POST">
+                <p>
+                    <input type="text" id="name" name="name" placeholder="Name" required><i class="validation"><span></span><span></span></i>
+                </p>
+                <p>
+                    <input type="text" id="username" name="username" placeholder="Username" required><i class="validation"><span></span><span></span></i>
+                </p>
+                <p>
+                    <input type="password" id="password" name="password" placeholder="Password" required><i class="validation"><span></span><span></span></i>
+                </p>
+                <p>
+                    <input type="submit" id="signup" value="SIGN UP">
+                </p>
+            </form>
+        </div>
+    </body>
+</html>

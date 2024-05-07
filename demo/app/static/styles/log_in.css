@@ -1,0 +1,184 @@
+body {
+    font-size: 1.6rem;
+    font-family: "Open Sans", sans-serif;
+    color: #2b3e51;
+  }
+  
+  #login-form-wrap h2 {
+    font-weight: 300;
+    text-align: center;
+    font-family: cursive;
+  }
+   
+  p {
+    font-family: cursive;
+    position: relative;
+  }
+  
+  a,
+  a:link,
+  a:visited,
+  a:active {
+    color: black;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  a:focus, a:hover,
+  a:link:focus,
+  a:link:hover,
+  a:visited:focus,
+  a:visited:hover,
+  a:active:focus,
+  a:active:hover {
+    color: black;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  
+  #login-form-wrap {
+    
+    background-color: #fff;
+    width: 35%;
+    margin: 30px auto;
+    text-align: center;
+    padding: 20px 0 0 0;
+    border-radius: 4px;
+    box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  #login-form {
+    padding: 0 60px;
+  }
+  
+  input {
+    font-family: cursive;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 4px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0 0 0 10px;
+    margin: 0;
+    color: #8a8b8e;
+    border: 1px solid #c2c0ca;
+    font-style: normal;
+    font-size: 16px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    position: relative;
+    display: inline-block;
+    background: none;
+  }
+
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: #3ca9e2;
+  }
+
+  input[type="text"]:focus:invalid,
+  input[type="password"]:focus:invalid {
+    color: #cc1e2b;
+    border-color: #cc1e2b;
+  }
+
+  input[type="text"]:valid ~ .validation,
+  input[type="password"]:valid ~ .validation {
+    display: block;
+    border-color: #0C0;
+  }
+
+  input[type="text"]:valid ~ .validation span,
+  input[type="password"]:valid ~ .validation span {
+    background: #0C0;
+    position: absolute;
+    border-radius: 6px;
+  }
+
+  input[type="text"]:valid ~ .validation span:first-child,
+  input[type="password"]:valid ~ .validation span:first-child {
+    top: 30px;
+    left: 14px;
+    width: 20px;
+    height: 3px;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+
+  input[type="text"]:valid ~ .validation span:last-child,
+  input[type="password"]:valid ~ .validation span:last-child {
+    top: 35px;
+    left: 8px;
+    width: 11px;
+    height: 3px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  
+  .validation {
+    display: none;
+    position: absolute;
+    content: " ";
+    height: 60px;
+    width: 30px;
+    right: 15px;
+    top: 0px;
+  }
+  
+  input[type="submit"] {
+    font-family: cursive;
+    align-self: center;
+    background-color: #fff;
+    background-image: none;
+    background-position: 0 90%;
+    background-repeat: repeat no-repeat;
+    background-size: 4px 3px;
+    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+    box-sizing: border-box;
+    color: #41403e;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 25px;
+    outline: none;
+    text-decoration: none;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    user-select: none;
+    -webkit-user-select: none;
+    text-align: center;  
+  }
+
+  input[type="submit"]:hover {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+  }
+
+  input[type="submit"]:focus {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+  }
+  
+  #create-account-wrap {
+    background-color: #eeedf1;
+    color: #8a8b8e;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 0 0 4px 4px;
+  }
+
+  #false_msg {
+    color:red;
+    font-size:15px;
+  }

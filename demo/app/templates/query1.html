@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Music</title>
+        <link rel="stylesheet", href="{{url_for('static', filename='styles/custom.css')}}">
+    </head>
+    <body>
+        <div>
+            <div id="title">
+                Popular Artists
+            </div>
+
+            <form method="POST" action="/query1/{{userid}}/1" id="box">
+                <input type="search" name="genre" placeholder="Search by genre" value="{{ genre}}">
+                <button class="button-80" TYPE=submit>search</button>
+            </form>
+
+        </div>
+        
+        <div id="artists">
+            <a href="/home/{{userid}}" class="button-55">Home</a>
+            <a href="/querySong/{{userid}}/1" class="button-55">Song List</a>
+            <a href="/query1/{{userid}}/1" class="button-55">Popular Artists</a>
+            <a href="/query2/{{userid}}/1" class="button-55">Albums</a>
+    
+        </div>
+        <!-- <h3>This Query  models a recommendation system.
+            It selects the most popular singer from a aiven genre and it selects the those albums with a popularity score more than 50.
+            So when a user specifies a particular genre he likes, the system can recommend the most popular albums sung by the most popular singer in that genre.
+            For this, a  query to group by genre is written and the max function is applied to get the most popular singer of that genre.
+            It is then joined with the album table to access the popular albums of those singers.
+
+        </h3> -->
+
+        <div id="song_list">
+            <table cellpadding="10">
+                <thead>
+                    <tr> 
+                        
+                        <th>Artist Name</th>
+                        <th>Artist Popularity</th>
+                        <th>Artist Genre</th>
+                        <th>Album Name</th>
+                        <th>Album Popularity</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for item in list1 %}
+                        <tr>
+                            <td align="center">{{item.artist_name}}</td>
+                            <td align="center">{{item.artist_popularity}}</td>
+                            <td align="center">{{item.artist_genre}}</td>
+                            <td align="center">{{item.album_name}}</td>
+                            <td align="center">{{item.album_popularity}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="change_page">
+                {% if page!='1'%}
+                <a href= "#" class="button-50" onclick="submitfrm_prev();">prev</a>
+                {% endif %}
+
+                <span style="font-family:cursive; font-size:35px">Page: {{page}}</span>
+
+                {% if length>=20 %}
+                    <a href= "#" class="button-50" onclick="submitfrm_next();">next</a>
+                {% endif %}
+            </div>
+            <script>
+                function submitfrm_next() {
+                    var frm = document.getElementById("box");  
+                    debugger;
+                    frm.action = "/query1/{{userid}}/{{nextpage}}";  
+                    frm.method = "post";                 
+                    frm.submit();      
+                };
+                function submitfrm_prev() {
+  
+                    var frm = document.getElementById("box");  
+                    frm.action = "/query1/{{userid}}/{{prevpage}}";  
+                    frm.method = "post";                 
+                    frm.submit();      
+                };
+            </script>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='script/modal.js')}}"></script>
+</html>

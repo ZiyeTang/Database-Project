@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Music</title>
+        <link rel="stylesheet", href="{{url_for('static', filename='styles/custom.css')}}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <script src="{{url_for('static', filename='script/modal.js')}}"></script>
+    </head>
+    <body>
+        <div>
+            <div id="title">
+                Song List
+            </div>
+            
+
+                <form method="POST" action="/querySong/{{userid}}/1" id="box">
+                    <input type="search" name="name" placeholder="Search song by key words" value="{{ name }}">
+                    <button class="button-80" TYPE=submit>search</button>
+                </form>
+
+        </div>
+        
+
+        <div id="songquery">
+            <a href="/home/{{userid}}" class="button-55">Home</a>
+            <a href="/querySong/{{userid}}/1" class="button-55">Song List</a>
+            <a href="/query1/{{userid}}/1" class="button-55">Popular Artists</a>
+            <a href="/query2/{{userid}}/1" class="button-55">Albums</a>
+        </div>
+
+        <div id="song_list">
+            <table cellpadding="10">
+                <thead>
+                    <tr> 
+                        
+                        <th>Song Name</th>
+                        <th>Artist</th>
+                        <th>Album</th>
+                        <th>Popularity</th>
+                        <th>Song ID</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for item in songs%}
+                        <tr>
+                            
+                            <td align="center">{{item.song_name}}</td>
+                            <td align="center">{{item.artist_name}}</td>
+                            <td align="center">{{item.album_name}}</td>
+                            <td align="center">{{item.song_popularity}}</td>
+                            <td align="center">{{item.song_id}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="change_page">
+                {% if page!='1'%}
+                <a href= "#" class="button-50" id="prev" onclick="submitfrm_prev();">prev</a>
+                {% endif %}
+
+                <span style="font-family:cursive; font-size:35px">Page: {{page}}</span>
+
+                {% if length>=20 %}
+                    <a href= "#" class="button-50" id="next" onclick="submitfrm_next();">next</a>
+                {% endif %}
+            </div>
+            <script>
+                function submitfrm_next() {
+                    var frm = document.getElementById("box");  
+                    frm.action = "/querySong/{{userid}}/{{nextpage}}";  
+                    frm.method = "post";                 
+                    frm.submit();      
+                }
+                function submitfrm_prev() {
+                    var frm = document.getElementById("box");  
+                    frm.action = "/querySong/{{userid}}/{{prevpage}}";  
+                    frm.method = "post";                 
+                    frm.submit();      
+                }
+            </script>
+            
+        </div>
+    </body>
+    
+</html>
