@@ -21,7 +21,7 @@
 | ----------- | ---------------------- |
 |  Title      |       MyMusics         |
 | System URL  |      link_to_system    |
-| Video Link  |      link_to_video     |
+| Video Link  |      [link_to_video](https://youtu.be/bDWvdMf8rfY)     |
 
 ## Project Summary
 For our project, we will be creating a website to search through song data, similar to Spotify. Visitors will be greeted with a search bar allowing for the searching of songs, albums, artists, or lyrics which will be used to determine what song they are trying to find. Users will be able to make an account and create playlists, adding songs from their searches, and add songs or artists to a favorites section. Additionally, upon searching a song various similar songs by genre will appear, allowing for users to discover new music to potentially add to their playlists.
