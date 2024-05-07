@@ -15,10 +15,5 @@ The website would ask each user to create an account. Users can search songs by 
 ## Low Fidelity UI Mockup
 <img src="411 project ui.jpg" alt="ui" width="300"/>              <img src="411 ui log in.jpg" alt="ui2" width="300"/>
 
-
-## Work Distribution
-Tommy Tang: Front end (UI), part of the back end<br />
-Sam Krauter: Extract data using python, part of the back end<br />
-Prerna Rathi: database management and analysis, overall troubleshooting.
-
-Video Link:https://youtu.be/bDWvdMf8rfY
+## Video Link
+https://youtu.be/bDWvdMf8rfY
