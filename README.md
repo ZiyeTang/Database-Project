@@ -15,7 +15,7 @@ The website would ask each user to create an account. Users can search songs by 
 ## Low Fidelity UI Mockup
 <img src="411 project ui.jpg" alt="ui" width="300"/>              <img src="411 ui log in.jpg" alt="ui2" width="300"/>
 
-# Conceptual Design
+# Database Conceptual Design
 ## UML Diagram
 <img src="UML diagram.png" alt="d" width="500"/>
 
